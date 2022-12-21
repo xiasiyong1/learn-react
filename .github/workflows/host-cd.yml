@@ -1,8 +1,8 @@
-name: CD
+name: Build and Deploy on HOST page
 on:
   # 以主干的push事件作为触发条件
   push:
-    branches: main
+    branches: master
 jobs:
   CD:
     runs-on: ubuntu-latest
