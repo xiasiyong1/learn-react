@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# 学习 CI/CD
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## CI
 
-## Available Scripts
+### 添加 eslint
 
-In the project directory, you can run:
+1. npm init @eslint/config
+   命令行执行`npm init @eslint/config`后会通过交互式提问初始化 eslint
+   初始化好之后会添加 eslint 的配置文件和安装对应的依赖
+   npm run start 之后，会发现很多报错
+   - string must use single quote
+     使用 prettier 自动格式化
+   - missing space between parentheses
+     使用 prettier 自动格式化
+   - 'React' must be in scope when using JSX
+     在 eslint 的配置文件中，extends "plugin:react/jsx-runtime"
+   - Extra semicolon
+     使用 prettier 自动格式化
+2. 社区各版本之间的规则
+   ![airbnb vs standard](https://cloud.tencent.com/developer/article/1704833?from=15425)
+3. 添加 script
+   "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
+   2.1 自动化测试文件中全局注入的方法会报错
+   为什么要全局注入 test，expect 等方法，怎么注入的？
+   怎么让 eslint 跳过检测？
+   ![eslint-plugin-jest](https://github.com/jest-community/eslint-plugin-jest)
 
-### `npm start`
+### 添加 prettier
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. 添加 prettier 配置文件
+2. 配置 prettier 规则
+   https://prettier.io/docs/en/configuration.html
+3. 通过 vscode 自动化格式化
+4. 通过 prettier cli 格式化
+   npm install --save-dev --save-exact prettier
+   echo {}> .prettierrc.json
+   touch .prettierignore
+   npx prettier --write .
+   或者添加 script "lint:prettier": "prettier --write \"src/\*_/_\""
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+5. eslint-config-prettier 解决 eslint 和 prttier 冲突
+   ![eslint-config-prettier](https://github.com/prettier/eslint-config-prettier#installation)
 
-### `npm test`
+### 添加 styleLint
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Getting started
+   https://stylelint.io/user-guide/get-started
