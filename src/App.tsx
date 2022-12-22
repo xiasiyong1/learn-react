@@ -15,7 +15,7 @@ const App: FC<Props> = (props) => {
     <div className="app">
       <header className="app-header">
         <img src={logo} className="app-logo" alt="logo" />
-        {/* <h1 className="app-header-text">React 学习</h1> */}
+        <h1 className="app-header-text">React 学习</h1>
       </header>
       <section className="app-content">
         <Aside />
