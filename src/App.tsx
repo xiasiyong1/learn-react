@@ -1,7 +1,14 @@
 import logo from './logo.svg'
 import './App.scss'
+import type { FC } from 'react'
 
-function App() {
+interface Props {
+  name: string
+}
+
+const App: FC<Props> = (props) => {
+  const { name } = props
+  console.log(name)
   return (
     <div className="app">
       <header className="app-header">

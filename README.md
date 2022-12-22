@@ -4,13 +4,29 @@
 
 # react 学习
 
-### react基础试用
-
-### react-router
-
-### redux
-
-### react + and
+- [ ] 现有create-react-app升级成typescript
+- [ ] react基础使用
+  - [ ] hooks
+    - [ ] Basic hooks
+      - [ ] useState
+      - [ ] useEffect
+      - [ ] useContext
+    - [ ] Additional hooks
+      - [ ] useReducer
+      - [ ] useCallback
+      - [ ] useMemo
+      - [ ] useRef
+      - [ ] useImperativeHandle
+      - [ ] useLayoutEffect
+      - [ ] useDebugValue
+      - [ ] useDeferredValue
+      - [ ] useTransition
+  - [ ] forwardRef
+  - [ ] errorBundary
+- [ ] react-router
+- [ ] redux
+- [ ] React test
+- [ ] react + and
 
 ## 工程化
 
