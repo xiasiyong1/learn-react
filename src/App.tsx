@@ -1,6 +1,8 @@
 import logo from './logo.svg'
-import './App.scss'
 import type { FC } from 'react'
+import './app.scss'
+import Aside from './components/layout/aside'
+import Main from './components/layout/main'
 
 interface Props {
   name: string
@@ -13,18 +15,12 @@ const App: FC<Props> = (props) => {
     <div className="app">
       <header className="app-header">
         <img src={logo} className="app-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload1.
-        </p>
-        <a
-          className="app-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {/* <h1 className="app-header-text">React 学习</h1> */}
       </header>
+      <section className="app-content">
+        <Aside />
+        <Main />
+      </section>
     </div>
   )
 }
