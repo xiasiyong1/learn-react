@@ -5,12 +5,10 @@ import Aside from './components/layout/aside'
 import Main from './components/layout/main'
 
 interface Props {
-  name: string
+  name?: string
 }
 
-const App: FC<Props> = (props) => {
-  const { name } = props
-  console.log(name)
+const App: FC<Props> = () => {
   return (
     <div className="app">
       <header className="app-header">

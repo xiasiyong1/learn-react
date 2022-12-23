@@ -2,6 +2,7 @@ import { type FC, useState, useEffect, useCallback } from 'react'
 import { Button, Badge, List, Space } from 'antd'
 import useDeepCompareEffect from './hooks/use-deep-compare-effect'
 import useUpdateEffect from './hooks/use-update-effect'
+import useAsyncEffect from './hooks/use-async-effect'
 // import { useUpdateEffect } from 'ahooks'
 
 const data = [
@@ -12,7 +13,7 @@ const data = [
   '5. 回调在第一次mount的时候不执行，只在deps中的数据改变了才执行',
   '6. useEffect中返回函数， 用于清楚副作用',
   '7. useEffect中返回非函数给出警告',
-  '7. useEffect想要接收一个async function怎么办？ useAsyncEffect',
+  '8. useEffect想要接收一个async function怎么办？ useAsyncEffect',
 ]
 
 const UseEffect: FC = () => {
@@ -65,6 +66,12 @@ const UseEffect: FC = () => {
   // useEffect(() => {
   //   return 1
   // }, [])
+  // 8. useEffect想要接收一个async function怎么办？ useAsyncEffect
+
+  useAsyncEffect(async () => {
+    const a = await Promise.resolve(1)
+    console.log('useAsyncEffect', a)
+  }, [count])
 
   /**
    * 虽然arr的值已经改变了，但是组件并不会更新，useEffect回调也不会触发
