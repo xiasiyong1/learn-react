@@ -20,7 +20,7 @@ module.exports = {
     project: ['tsconfig.json'],
     createDefaultProgram: true,
   },
-  plugins: ['react', 'jest'],
+  plugins: ['react', 'jest', 'react-hooks'],
   parser: '@typescript-eslint/parser',
   rules: {
     // 最后一个import之后需要有一个空行
@@ -35,5 +35,8 @@ module.exports = {
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     // 'react-hooks/rules-of-hooks': 'warn',
+    '@typescript-eslint/no-floating-promises': 'off',
+    'react/prop-types': 'off',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 }

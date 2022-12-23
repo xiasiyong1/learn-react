@@ -9,6 +9,7 @@ const useDeepCompareEffect = (callback: Function, deps: any[]) => {
       callback()
       preValue.current = deps
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 }
 

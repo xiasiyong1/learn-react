@@ -60,7 +60,7 @@ const UseEffect: FC = () => {
         .querySelector('#btn1')
         ?.removeEventListener('click', handleBtnClick)
     }
-  }, [count])
+  }, [count, handleBtnClick])
   // todo: ts怎么配置这个必须返回函数的
   // 7. useEffect中返回非函数给出警告，这是ts给的，有这样的代码ts直接报错，ts在哪里配置的？
   // useEffect(() => {

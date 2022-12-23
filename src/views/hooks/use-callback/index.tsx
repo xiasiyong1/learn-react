@@ -1,7 +1,18 @@
-import { type FC } from 'react'
+import { useState, memo, type FC } from 'react'
+import Son from './son'
+import { Button, Space } from 'antd'
 
 const UseCallback: FC = () => {
-  return <div>UseCallback</div>
+  const [parentCount, setParentCount] = useState(1)
+  const handleClick = () => {
+    setParentCount(parentCount + 1)
+  }
+  return (
+    <Space direction="vertical">
+      <Button onClick={handleClick}>setParentCount + 1</Button>
+      <Son parentCount={parentCount} />
+    </Space>
+  )
 }
 
-export default UseCallback
+export default memo(UseCallback)

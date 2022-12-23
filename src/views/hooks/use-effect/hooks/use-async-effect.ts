@@ -7,6 +7,7 @@ function useAsyncEffect(fn: Function, deps: any[]) {
       await e
     }
     void execute()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 }
 

@@ -16,6 +16,7 @@ const useUpdateEffect = (callback: Function, deps: any[]) => {
     } else {
       isMounted.current = true
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps)
 }
 

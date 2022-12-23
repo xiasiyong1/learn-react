@@ -1,5 +1,5 @@
 import logo from './logo.svg'
-import type { FC } from 'react'
+import { type FC } from 'react'
 import './app.scss'
 import Aside from './components/layout/aside'
 import Main from './components/layout/main'
